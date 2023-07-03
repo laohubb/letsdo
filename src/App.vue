@@ -1,6 +1,6 @@
 <template>
-  <div id="app" class="app-container">
-    <div class="todo-container bg-white rounded-lg shadow-md p-6 m-4 w-1/2 mx-auto">
+  <div id="app" class="app-container flex justify-center w-screen">
+    <div class="todo-container bg-white rounded-lg shadow-md p-6 m-4 sm:w-1/2 mx-auto">
       <h1 class="text-3xl font-bold text-center mb-4">Todo List</h1>
       <textarea class="w-full px-3 py-2 text-gray-700 border rounded-lg focus:outline-none" rows="4" v-model="newTodo" @keyup.enter="addTodos"></textarea>
       <button class="mt-2 w-full p-2 text-white bg-blue-600 rounded hover:bg-blue-500" @click="addTodos">Add Todos</button>
@@ -87,9 +87,9 @@ onBeforeUnmount(saveTodos);
 
 <style scoped>
 .app-container {
-  display: flex;
-  justify-content: center;
-  align-items: center;
+  /*display: flex;*/
+  /*justify-content: center;*/
+  /*align-items: center;*/
 
 }
 
