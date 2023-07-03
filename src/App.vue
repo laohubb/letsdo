@@ -34,7 +34,12 @@ const todos = ref([]);
 const completedTodos = ref([]);
 
 const addTodos = () => {
-  if (/^\d+\./.test(newTodo.value)) {
+  if (newTodo.value.includes("-")) {
+    const todoList = newTodo.value.split("-").slice(1);
+    todoList.forEach(todo => {
+      todos.value.push({ text: todo.trim() });
+    });
+  } else if (/^\d+\./.test(newTodo.value)) {
     const todoList = newTodo.value.split(/\d+\./).slice(1);
     todoList.forEach(todo => {
       todos.value.push({ text: todo.trim() });
@@ -45,6 +50,7 @@ const addTodos = () => {
   newTodo.value = "";
   saveTodos();
 };
+
 
 const completeTodo = (index) => {
   completedTodos.value.push(todos.value[index]);
