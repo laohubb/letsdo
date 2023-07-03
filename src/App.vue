@@ -34,6 +34,9 @@ const todos = ref([]);
 const completedTodos = ref([]);
 
 const addTodos = () => {
+  if (newTodo.value.trim() === "") {
+    return; // 如果newTodo的值为空或只包含空格，则不执行添加操作
+  }
   if (newTodo.value.includes("-")) {
     const todoList = newTodo.value.split("-").slice(1);
     todoList.forEach(todo => {
